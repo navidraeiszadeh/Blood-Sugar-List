@@ -47,7 +47,7 @@ class BloodSugarEntityData extends DataClass
 
   factory BloodSugarEntityData.fromJson(Map<String, dynamic> json,
       {ValueSerializer? serializer}) {
-    serializer ??= driftRuntimeOptions.defaultSerializer;
+    serializer ??= moorRuntimeOptions.defaultSerializer;
     return BloodSugarEntityData(
       bloodSugar: serializer.fromJson<int>(json['bloodSugar']),
       measureState: serializer.fromJson<String>(json['measureState']),
@@ -56,7 +56,7 @@ class BloodSugarEntityData extends DataClass
   }
   @override
   Map<String, dynamic> toJson({ValueSerializer? serializer}) {
-    serializer ??= driftRuntimeOptions.defaultSerializer;
+    serializer ??= moorRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
       'bloodSugar': serializer.toJson<int>(bloodSugar),
       'measureState': serializer.toJson<String>(measureState),
